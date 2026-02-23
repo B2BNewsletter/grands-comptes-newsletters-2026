@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newsletters B2B Grands Comptes 2026</title>
+
+  <style>
+    :root{
+      --bg-a:#071a2b;
+      --bg-b:#0b3a5c;
+
+      --brand-a:#0b5fa5;
+      --brand-b:#073f72;
+
+      --ink:#0b1220;
+      --muted:#334155;
+      --card:#ffffff;
+      --line:#d7e6f3;
+
+      --blue-1:#e6f3ff;
+      --blue-2:#d6ecff;
+      --blue-3:#c6e2ff;
+      --blue-4:#f2f9ff;
+
+      --phase-presta:#e8f7ef;
+      --phase-b2b:#e6f0ff;
+      --phase-comm:#fff4e6;
+      --phase-client:#ffe7ef;
+
+      --okbg:#dcfce7; --ok:#166534; --okbd:#86efac;
+      --warnbg:#ffedd5; --warn:#9a3412; --warnbd:#fdba74;
+      --futurebg:#e0e7ff; --future:#3730a3; --futurebd:#a5b4fc;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding:20px;
+      min-height:100vh;
+      background:
+        radial-gradient(900px 520px at 12% 12%, rgba(56,189,248,.18), transparent 60%),
+        radial-gradient(900px 520px at 88% 18%, rgba(59,130,246,.16), transparent 60%),
+        linear-gradient(135deg,var(--bg-a),var(--bg-b));
+      color:var(--ink);
+    }
+
+    .container{
+      max-width:1600px;
+      margin:0 auto;
+      background:var(--card);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .header{
+      background: linear-gradient(135deg, rgba(11,95,165,0.98) 0%, rgba(7,63,114,0.98) 100%);
+      color:#fff;
+      padding:28px 30px;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .header::before{
+      content:'';
+      position:absolute;
+      top:0; right:0;
+      width:340px; height:340px;
+      background: radial-gradient(circle, rgba(56,189,248,0.22) 0%, rgba(56,189,248,0) 70%);
+      border-radius:50%;
+      transform: translate(45%,-45%);
+    }
+
+    .vf-logo{
+      height:72px;
+      width:auto;
+      object-fit:contain;
+      flex-shrink:0;
+      position:relative;
+      z-index:1;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
+    }
+
+    .header-text{position:relative;z-index:1}
+    .header h1{font-size:30px;line-height:1.1;margin-bottom:6px}
+    .header p{font-size:14px;opacity:.95;font-weight:600}
+
+    .controls{
+      padding:18px 30px;
+      background:var(--blue-4);
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+      border-bottom:3px solid rgba(11,95,165,0.18);
+    }
+    .control-group{display:flex;align-items:center;gap:10px}
+    .control-group label{font-weight:800;color:var(--ink);font-size:14px}
+    select{
+      padding:10px 14px;
+      border:2px solid var(--line);
+      border-radius:10px;
+      font-size:14px;
+      background:#fff;
+      transition:.2s;
+      color:var(--ink);
+    }
+    select:hover{border-color: rgba(11,95,165,0.35);}
+    select:focus{
+      outline:none;
+      border-color: rgba(11,95,165,0.6);
+      box-shadow:0 0 0 3px rgba(11,95,165,0.12);
+    }
+    .btn{
+      padding:10px 16px;
+      background: linear-gradient(135deg, rgba(11,95,165,0.98), rgba(7,63,114,0.98));
+      color:#fff;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      font-weight:900;
+      font-size:14px;
+      transition:.2s;
+      box-shadow:0 8px 18px rgba(11,95,165,0.18);
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.03);}
+
+    .stats{
+      padding:20px 30px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap:18px;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+    .stat-card{
+      background:
+        radial-gradient(700px 180px at 10% 0%, rgba(11,95,165,.10), transparent 60%),
+        radial-gradient(700px 180px at 90% 0%, rgba(56,189,248,.12), transparent 60%),
+        #fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 10px 24px rgba(15,23,42,0.06);
+    }
+    .stat-number{
+      font-size:42px;
+      font-weight:900;
+      line-height:1.05;
+      margin-bottom:6px;
+      color:var(--ink);
+      word-break:break-word;
+    }
+    .stat-label{
+      font-size:15px;
+      color:var(--muted);
+      font-weight:800;
+    }
+    .stat-sub{
+      margin-top:8px;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .calendar-grid{
+      padding:24px 30px 30px;
+      overflow-x:auto;
+      background:#fff;
+    }
+    table{width:100%;border-collapse:collapse;min-width:1500px;}
+
+    th{
+      background: var(--brand-a);
+      color:#fff;
+      padding:14px 10px;
+      text-align:center;
+      font-weight:900;
+      font-size:12px;
+      border:1px solid rgba(255,255,255,0.10);
+      position:sticky;
+      top:0;
+      z-index:10;
+      white-space:nowrap;
+    }
+    th.main-header{background: var(--brand-b);font-size:13px}
+
+    td{
+      padding:12px 10px;
+      text-align:center;
+      border:1px solid var(--line);
+      font-size:12px;
+      color:var(--ink) !important;
+      white-space:nowrap;
+    }
+
+    td.month{
+      background: var(--blue-4);
+      font-weight:900;
+      text-align:left;
+      padding-left:18px;
+      position:sticky;
+      left:0;
+      z-index:5;
+      border-right:4px solid rgba(11,95,165,0.25);
+    }
+
+    .cell-presta{background: var(--phase-presta);}
+    .cell-b2b{background: var(--phase-b2b);}
+    .cell-comm{background: var(--phase-comm);}
+    .cell-client{background: var(--phase-client);}
+
+    tr.disabled-row td{
+      background:#f1f5f9 !important;
+      color:#64748b !important;
+    }
+    tr.disabled-row td.month{background:#e2e8f0 !important; color:#475569 !important;}
+    tr.disabled-row strong{color:#64748b !important;}
+
+    .date-cell{transition:.2s}
+    .date-cell:hover{
+      transform:scale(1.01);
+      box-shadow:0 2px 10px rgba(11,95,165,0.12);
+      background:#fff;
+    }
+
+    .status-badge{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+      border:2px solid transparent;
+      white-space:nowrap;
+    }
+    .status-termine{ background: var(--okbg); border-color: var(--okbd); color: var(--ok); }
+    .status-encours{ background: var(--warnbg); border-color: var(--warnbd); color: var(--warn); animation:pulse-status 2s infinite; }
+    .status-avenir { background: var(--futurebg); border-color: var(--futurebd); color: var(--future); }
+    .status-na { background:#f1f5f9; border-color:#cbd5e1; color:#334155; }
+
+    .days-remaining{font-size:11px;font-weight:900;color:var(--ink);}
+    .highlight-upcoming{ animation:pulse-row 2s infinite; }
+
+    @keyframes pulse-row{
+      0%,100%{background-color:transparent;}
+      50%{background-color:rgba(56,189,248,0.10);}
+    }
+    @keyframes pulse-status{
+      0%,100%{box-shadow:0 0 0 0 rgba(56,189,248,0.28);}
+      50%{box-shadow:0 0 0 10px rgba(56,189,248,0);}
+    }
+
+    .legend{
+      padding:16px 30px 22px;
+      background:var(--blue-4);
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+    .legend-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:900;color:var(--ink)}
+    .legend-color{width:22px;height:22px;border-radius:8px;border:2px solid rgba(15,23,42,0.10)}
+    .legend-presta{background:var(--phase-presta)}
+    .legend-b2b{background:var(--phase-b2b)}
+    .legend-comm{background:var(--phase-comm)}
+    .legend-client{background:var(--phase-client)}
+
+    @media (max-width: 768px){
+      .vf-logo{height:56px;}
+      .header h1{font-size:22px;}
+      .controls{flex-direction:column;align-items:stretch;}
+      .control-group{flex-direction:column;align-items:stretch;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img class="vf-logo" src="VF_logo_linear_grey_RGB.png" alt="Vattenfall" />
+      <div class="header-text">
+        <h1>Newsletters B2B Grands Comptes 2026</h1>
+        <p>Planning annuel interactif de production et diffusion</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label>📅 Filtrer par mois:</label>
+        <select id="filterMonth">
+          <option value="tous">Tous les mois</option>
+          <option>JANVIER</option><option>FÉVRIER</option><option>MARS</option><option>AVRIL</option>
+          <option>MAI</option><option>JUIN</option><option>JUILLET</option><option>AOÛT</option>
+          <option>SEPTEMBRE</option><option>OCTOBRE</option><option>NOVEMBRE</option><option>DÉCEMBRE</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>🎯 Filtrer par statut:</label>
+        <select id="filterStatus">
+          <option value="tous">Tous les statuts</option>
+          <option value="avenir">À venir</option>
+          <option value="encours">En cours</option>
+          <option value="termine">Terminé</option>
+        </select>
+      </div>
+
+      <button class="btn" onclick="resetFilters()">🔄 Réinitialiser</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number" id="totalRows">—</div>
+        <div class="stat-label">Lignes affichées</div>
+        <div class="stat-sub">Inclut intermédiaires + mois sans envoi</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="nextDeadline">-</div>
+        <div class="stat-label">Prochaine date butoir</div>
+        <div class="stat-sub" id="nextMonth">—</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number" id="daysUntil">-</div>
+        <div class="stat-label">Compte à rebours (jours)</div>
+        <div class="stat-sub">Mise à jour automatique chaque jour</div>
+      </div>
+    </div>
+
+    <div class="calendar-grid">
+      <table>
+        <thead>
+          <tr>
+            <th class="main-header">Mois</th>
+            <th class="main-header">Statut</th>
+            <th class="main-header">Jours restants</th>
+            <th colspan="2">Presta → B2B</th>
+            <th colspan="2">B2B → Presta</th>
+            <th colspan="2">Presta → B2B</th>
+            <th colspan="2">B2B → Communication</th>
+            <th colspan="2">Communication → B2B</th>
+            <th>Communication → Clients</th>
+          </tr>
+          <tr>
+            <th></th><th></th><th></th>
+            <th>Proposition sujets</th><th>Date butoire</th>
+            <th>Validation / ajustement</th><th>Date butoire</th>
+            <th>Envoi rédaction</th><th>Date</th>
+            <th>Relecture &amp; modifs</th><th>Date butoire</th>
+            <th>BAT</th><th>Date</th>
+            <th>Envoi newsletter</th>
+          </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
+      </table>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="legend-color legend-presta"></span>Prestataire → B2B</div>
+      <div class="legend-item"><span class="legend-color legend-b2b"></span>B2B (Validation)</div>
+      <div class="legend-item"><span class="legend-color legend-comm"></span>Communication (Relecture &amp; BAT)</div>
+      <div class="legend-item"><span class="legend-color legend-client"></span>Envoi aux clients</div>
+    </div>
+  </div>
+
+  <script>
+    const rows = [{"month": "JANVIER", "disabled": false, "dates": null}, {"month": "FÉVRIER", "disabled": false, "dates": null}, {"month": "MARS", "disabled": false, "dates": {"prop": "Proposition", "propDate": "18/02/2026", "val": "Validation", "valDate": "23/02/2026", "red": "Rédaction", "redDate": "03/03/2026", "rel": "Relecture", "relDate": "04/03/2026", "bat": "BAT", "batDate": "04/03/2026", "send": "05/03/2026"}}, {"month": "MARS intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "04/03/2026", "val": "Validation", "valDate": "09/03/2026", "red": "Rédaction", "redDate": "17/03/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "AVRIL", "disabled": false, "dates": {"prop": "Proposition", "propDate": "18/03/2026", "val": "Validation", "valDate": "23/03/2026", "red": "Rédaction", "redDate": "03/04/2026", "rel": "Relecture", "relDate": "06/04/2026", "bat": "BAT", "batDate": "06/04/2026", "send": "07/04/2026"}}, {"month": "AVRIL intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "01/04/2026", "val": "Validation", "valDate": "06/04/2026", "red": "Rédaction", "redDate": "17/04/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "MAI", "disabled": false, "dates": {"prop": "Proposition", "propDate": "20/04/2026", "val": "Validation", "valDate": "23/04/2026", "red": "Rédaction", "redDate": "05/05/2026", "rel": "Relecture", "relDate": "06/05/2026", "bat": "BAT", "batDate": "06/05/2026", "send": "07/05/2026"}}, {"month": "MAI intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "04/05/2026", "val": "Validation", "valDate": "07/05/2026", "red": "Rédaction", "redDate": "19/05/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "JUIN", "disabled": false, "dates": {"prop": "Proposition", "propDate": "18/05/2026", "val": "Validation", "valDate": "20/05/2026", "red": "Rédaction", "redDate": "03/06/2026", "rel": "Relecture", "relDate": "04/06/2026", "bat": "BAT", "batDate": "04/06/2026", "send": "05/06/2026"}}, {"month": "JUIN intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "01/06/2026", "val": "Validation", "valDate": "03/06/2026", "red": "Rédaction", "redDate": "17/06/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "JUILLET", "disabled": false, "dates": {"prop": "Proposition", "propDate": "22/06/2026", "val": "Validation", "valDate": "24/06/2026", "red": "Rédaction", "redDate": "03/07/2026", "rel": "Relecture", "relDate": "06/07/2026", "bat": "BAT", "batDate": "06/07/2026", "send": "07/07/2026"}}, {"month": "JUILLET intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "06/07/2026", "val": "Validation", "valDate": "08/07/2026", "red": "Rédaction", "redDate": "17/07/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "AOÛT", "disabled": true, "dates": null}, {"month": "AOÛT intermédiaire", "disabled": true, "dates": null}, {"month": "SEPTEMBRE", "disabled": false, "dates": {"prop": "Proposition", "propDate": "19/08/2026", "val": "Validation", "valDate": "24/08/2026", "red": "Rédaction", "redDate": "04/09/2026", "rel": "Relecture", "relDate": "07/09/2026", "bat": "BAT", "batDate": "07/09/2026", "send": "08/09/2026"}}, {"month": "SEPTEMBRE intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "02/09/2026", "val": "Validation", "valDate": "07/09/2026", "red": "Rédaction", "redDate": "18/09/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "OCTOBRE", "disabled": false, "dates": {"prop": "Proposition", "propDate": "21/09/2026", "val": "Validation", "valDate": "23/09/2026", "red": "Rédaction", "redDate": "06/10/2026", "rel": "Relecture", "relDate": "07/10/2026", "bat": "BAT", "batDate": "07/10/2026", "send": "08/10/2026"}}, {"month": "OCTOBRE intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "05/10/2026", "val": "Validation", "valDate": "07/10/2026", "red": "Rédaction", "redDate": "20/10/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "NOVEMBRE", "disabled": false, "dates": {"prop": "Proposition", "propDate": "19/10/2026", "val": "Validation", "valDate": "21/10/2026", "red": "Rédaction", "redDate": "04/11/2026", "rel": "Relecture", "relDate": "05/11/2026", "bat": "BAT", "batDate": "05/11/2026", "send": "06/11/2026"}}, {"month": "NOVEMBRE intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "02/11/2026", "val": "Validation", "valDate": "04/11/2026", "red": "Rédaction", "redDate": "18/11/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}, {"month": "DÉCEMBRE", "disabled": false, "dates": {"prop": "Proposition", "propDate": "18/11/2026", "val": "Validation", "valDate": "23/11/2026", "red": "Rédaction", "redDate": "04/12/2026", "rel": "Relecture", "relDate": "07/12/2026", "bat": "BAT", "batDate": "07/12/2026", "send": "08/12/2026"}}, {"month": "DÉCEMBRE intermédiaire", "disabled": false, "dates": {"prop": "Proposition", "propDate": "02/12/2026", "val": "Validation", "valDate": "07/12/2026", "red": "Rédaction", "redDate": "18/12/2026", "rel": "", "relDate": "", "bat": "", "batDate": "", "send": ""}}];
+
+    function startOfToday(){
+      const t = new Date();
+      t.setHours(0,0,0,0);
+      return t;
+    }
+
+    function parseFRDateToDate(fr){
+      // "dd/mm/yyyy" -> Date (local)
+      const parts = (fr || "").split("/");
+      if(parts.length !== 3) return null;
+      const iso = `${parts[2]}-${parts[1]}-${parts[0]}T00:00:00`;
+      const d = new Date(iso);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function daysUntilDate(d){
+      const today = startOfToday();
+      return Math.ceil((d - today) / 86400000);
+    }
+
+    function statusFromDiff(diff){
+      if(diff < 0) return "termine";
+      if(diff <= 7) return "encours";
+      return "avenir";
+    }
+
+    function badge(status){
+      const map = {
+        termine:'<span class="status-badge status-termine">✓ Terminé</span>',
+        encours:'<span class="status-badge status-encours">⚡ En cours</span>',
+        avenir:'<span class="status-badge status-avenir">📅 À venir</span>',
+        na:'<span class="status-badge status-na">—</span>'
+      };
+      return map[status] || map.na;
+    }
+
+    function collectRowDates(r){
+      if(!r.dates) return [];
+      const d = r.dates;
+      const candidates = [d.propDate, d.valDate, d.redDate, d.relDate, d.batDate, d.send]
+        .filter(x => x && String(x).trim() !== "");
+      return candidates
+        .map(parseFRDateToDate)
+        .filter(x => x);
+    }
+
+    function earliestFuture(dates){
+      const today = startOfToday();
+      const future = dates.filter(d => d >= today).sort((a,b)=>a-b);
+      return future.length ? future[0] : null;
+    }
+
+    function render(){
+      const tbody = document.getElementById("calendarBody");
+      tbody.innerHTML = "";
+
+      rows.forEach(r => {
+        // For filters, group "MARS intermédiaire" with "MARS"
+        const baseMonth = (r.month.split(" ")[0] || r.month);
+
+        const rowDates = (!r.disabled) ? collectRowDates(r) : [];
+        const nextInRow = earliestFuture(rowDates);
+        const diff = nextInRow ? daysUntilDate(nextInRow) : null;
+
+        const st = (diff === null) ? "na" : statusFromDiff(diff);
+        const daysText = (diff === null) ? "—" : (diff < 0 ? "Passé" : `J-${diff}`);
+
+        const tr = document.createElement("tr");
+        tr.dataset.month = baseMonth;
+        tr.dataset.status = st;
+        if(r.disabled) tr.classList.add("disabled-row");
+        if(st === "encours" && !r.disabled) tr.classList.add("highlight-upcoming");
+
+        const d = r.dates;
+
+        if(d){
+          tr.innerHTML = `
+            <td class="month">${r.month}</td>
+            <td>${badge(st)}</td>
+            <td class="days-remaining"><strong>${daysText}</strong></td>
+
+            <td class="date-cell cell-presta">${d.prop || "—"}</td>
+            <td class="date-cell cell-presta">${d.propDate || "—"}</td>
+
+            <td class="date-cell cell-b2b">${d.val || "—"}</td>
+            <td class="date-cell cell-b2b">${d.valDate || "—"}</td>
+
+            <td class="date-cell cell-presta">${d.red || "—"}</td>
+            <td class="date-cell cell-presta">${d.redDate || "—"}</td>
+
+            <td class="date-cell cell-comm">${d.rel || "—"}</td>
+            <td class="date-cell cell-comm">${d.relDate || "—"}</td>
+
+            <td class="date-cell cell-comm">${d.bat || "—"}</td>
+            <td class="date-cell cell-comm">${d.batDate || "—"}</td>
+
+            <td class="date-cell cell-client"><strong>${d.send || "—"}</strong></td>
+          `;
+        } else {
+          tr.innerHTML = `
+            <td class="month">${r.month}</td>
+            <td>${badge(st)}</td>
+            <td class="days-remaining"><strong>${daysText}</strong></td>
+
+            <td class="date-cell cell-presta">—</td><td class="date-cell cell-presta">—</td>
+            <td class="date-cell cell-b2b">—</td><td class="date-cell cell-b2b">—</td>
+            <td class="date-cell cell-presta">—</td><td class="date-cell cell-presta">—</td>
+            <td class="date-cell cell-comm">—</td><td class="date-cell cell-comm">—</td>
+            <td class="date-cell cell-comm">—</td><td class="date-cell cell-comm">—</td>
+            <td class="date-cell cell-client"><strong>—</strong></td>
+          `;
+        }
+
+        tbody.appendChild(tr);
+      });
+
+      updateStats();
+      applyFilters();
+    }
+
+    function updateStats(){
+      document.getElementById("totalRows").textContent = String(rows.length);
+
+      // Global next deadline: earliest future date across ALL columns, ALL rows (excluding disabled)
+      const all = [];
+      rows.forEach(r => {
+        if(r.disabled) return;
+        collectRowDates(r).forEach(d => all.push({month: r.month, date: d}));
+      });
+
+      const today = startOfToday();
+      const future = all.filter(x => x.date >= today).sort((a,b)=>a.date-b.date);
+
+      if(future.length){
+        const next = future[0];
+        const dd = String(next.date.getDate()).padStart(2,'0');
+        const mm = String(next.date.getMonth()+1).padStart(2,'0');
+        const yyyy = next.date.getFullYear();
+        document.getElementById("nextDeadline").textContent = `${dd}/${mm}/${yyyy}`;
+        document.getElementById("nextMonth").textContent = `Mois : ${next.month}`;
+        document.getElementById("daysUntil").textContent = String(Math.max(daysUntilDate(next.date),0));
+      } else {
+        document.getElementById("nextDeadline").textContent = "-";
+        document.getElementById("nextMonth").textContent = "—";
+        document.getElementById("daysUntil").textContent = "-";
+      }
+    }
+
+    function applyFilters(){
+      const monthFilter = document.getElementById("filterMonth").value;
+      const statusFilter = document.getElementById("filterStatus").value;
+
+      document.querySelectorAll("#calendarBody tr").forEach(row=>{
+        const month = row.dataset.month;
+        const status = row.dataset.status;
+
+        const okMonth = (monthFilter === "tous" || month === monthFilter);
+        const okStatus = (statusFilter === "tous" || status === statusFilter);
+
+        row.style.display = (okMonth && okStatus) ? "" : "none";
+      });
+    }
+
+    function resetFilters(){
+      document.getElementById("filterMonth").value = "tous";
+      document.getElementById("filterStatus").value = "tous";
+      applyFilters();
+    }
+
+    document.getElementById("filterMonth").addEventListener("change", applyFilters);
+    document.getElementById("filterStatus").addEventListener("change", applyFilters);
+
+    render();
+
+    // Mise à jour automatique à minuit (compte à rebours + statuts + prochaines échéances)
+    function scheduleMidnightRefresh(){
+      const now = new Date();
+      const nextMidnight = new Date(now);
+      nextMidnight.setHours(24,0,0,0);
+      const ms = nextMidnight - now;
+
+      setTimeout(() => {
+        render();
+        scheduleMidnightRefresh();
+      }, ms + 50);
+    }
+    scheduleMidnightRefresh();
+  </script>
+</body>
+</html>
